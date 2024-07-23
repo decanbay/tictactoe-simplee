@@ -15,6 +15,7 @@ class tictactoe():
     def reset(self):
         self.tics= np.zeros((3,3))
         self.tacs= np.zeros((3,3))
+        self.render()
         
     def tic(self,ticpos):
         self.validate_move(ticpos)
@@ -28,7 +29,6 @@ class tictactoe():
         self.render()
         self.checkwin()
 
-        
     def render(self):
         self.string=''      
         
@@ -45,6 +45,7 @@ class tictactoe():
                 print('\n')
                 self.string = ''
             cnt+=1
+
     def validate_move(self,newpos):
         if newpos not in [(x,y) for x in range(3) for y in range(3)]:
             raise ValueError("Stay inside the board")
@@ -74,31 +75,19 @@ class tictactoe():
                     print("Tac wins")
                     self.reset()
                     return 1
-
-                
-        
-        
-        
-        
        
-        
-        
-        
+#%%         
 game = tictactoe()        
-
 game.reset()
-
 game.render()
-
 game.tic((2,2))
 game.tac((1,0))
 
 game.tic((0,0))
 game.tac((1,1))
 game.tic((2,1))
-
-game.tic((2,2))
-
+game.tac((1,2))
+# Tac wins
 
     
     
