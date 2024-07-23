@@ -1,1 +1,1 @@
-games
+Simple Tictactoe
